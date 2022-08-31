@@ -27,4 +27,12 @@ describe('Login e registro de usuários alura pic', () => {
     cy.contains('button', 'Register').click();
     cy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');
   });
+
+  it('verifica acesso', () => {
+    cy.contains('a', 'Register now').click();
+    cy.contains('button', 'Register').click();
+    cy.get('input[formcontrolname="password"]').type('123');
+    cy.contains('button', 'Register').click();
+    cy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');
+  });
 });
