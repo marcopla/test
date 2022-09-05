@@ -36,6 +36,13 @@ describe('Login e registro de usuários alura pic', () => {
     cy.contains('ap-vmessage', 'Must be lower case').should('be.visible');
   });
 
+  it('fazer login do usuário válido', () => {
+    cy.get('input[formcontrolname="userName"]').type('flavio');
+    cy.get('input[formcontrolname="password"]').type('123');
+    cy.get('button[type="submit"]').click();
+    cy.contains('a', '(Logout)').should('be.visible');
+  });
+
   it('fazer login do usuário inválido', () => {
     cy.get('input[formcontrolname="userName"]').type('jaqueline');
     cy.get('input[formcontrolname="password"]').type('1234');
