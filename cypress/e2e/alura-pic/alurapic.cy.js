@@ -49,9 +49,7 @@ describe('Login e registro de usuários alura pic', () => {
   });
 
   it('fazer login do usuário inválido', () => {
-    cy.get('input[formcontrolname="userName"]').type('jaqueline');
-    cy.get('input[formcontrolname="password"]').type('1234');
-    cy.get('button[type="submit"]').click();
+    cy.login('jaqueline', '1234');
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Invalid user name or password');
     });
