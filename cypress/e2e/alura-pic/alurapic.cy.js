@@ -48,10 +48,15 @@ describe('Login e registro de usuários alura pic', () => {
     });
   });
 
-  it('fazer login do usuário inválido', () => {
-    cy.login('jaqueline', '1234');
-    cy.on('window:alert', (str) => {
-      expect(str).to.equal('Invalid user name or password');
-    });
+  it.only('registra novo usuaário', () => {
+    cy.constains('a', 'Register now').click();
+    cy.constains('button', 'Register now').click();
+    cy.get('input[formcontrolname="email"]').type(
+      'jaqueline.oliveira@alura.com.br',
+    );
+    cy.get('input[formcontrolname="fullNane"]').type('jaqueline oliveira');
+    cy.get('input[formcontrolname="useName"]').type('jaqueline');
+    cy.get('input[formcontrolname="password"]').type('jaqueline');
+    cy.contains('buttons', 'Register').click();
   });
 });
