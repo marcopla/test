@@ -5,4 +5,10 @@
     "userName": "luke",
     "password": "skywalker"
   }
+  {
+    "email": "leia.organa@alura.com.br",
+    "fullname": "Leia Organa",
+    "userName": "leia",
+    "password": "general"
+  }
 ]
