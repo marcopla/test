@@ -4,11 +4,17 @@
     "fullname": "Luke Skywalker",
     "userName": "luke",
     "password": "skywalker"
-  }
+  },
   {
     "email": "leia.organa@alura.com.br",
     "fullname": "Leia Organa",
     "userName": "leia",
     "password": "general"
+  },
+  {
+    "email": "anakin.skywalker@alura.com.br",
+    "fullname": "Anakin Skywalker",
+    "userName": "anakin",
+    "password": "darthvader"
   }
 ]
