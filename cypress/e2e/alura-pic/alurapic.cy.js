@@ -48,7 +48,8 @@ describe('Login e registro de usuários alura pic', () => {
     });
   });
 
-  it.only('registra novo usuaário', () => {
+  const usuarios = require('../../fixtures/usuarios.json');
+  it.only('registra novo usuário', () => {
     cy.constains('a', 'Register now').click();
     cy.constains('button', 'Register now').click();
     cy.get('input[formcontrolname="email"]').type(
