@@ -49,15 +49,17 @@ describe('Login e registro de usuários alura pic', () => {
   });
 
   const usuarios = require('../../fixtures/usuarios.json');
-  it.only('registra novo usuário', () => {
-    cy.constains('a', 'Register now').click();
-    cy.constains('button', 'Register now').click();
-    cy.get('input[formcontrolname="email"]').type(
-      'jaqueline.oliveira@alura.com.br',
-    );
-    cy.get('input[formcontrolname="fullNane"]').type('jaqueline oliveira');
-    cy.get('input[formcontrolname="useName"]').type('jaqueline');
-    cy.get('input[formcontrolname="password"]').type('jaqueline');
-    cy.contains('buttons', 'Register').click();
+  usuarios.forEach((usuario) => {
+    it.only(`registra novo usuário ${usuario.userName}`, () => {
+      cy.constains('a', 'Register now').click();
+      cy.constains('button', 'Register now').click();
+      cy.get('input[formcontrolname="email"]').type(
+        'jaqueline.oliveira@alura.com.br',
+      );
+      cy.get('input[formcontrolname="fullName"]').type(usuario.fullname);
+      cy.get('input[formcontrolname="userName"]').type(usuario.fullname);
+      cy.get('input[formcontrolname="password"]').type(usuario.password);
+      cy.contains('buttons', 'Register').click();
+    });
   });
 });
