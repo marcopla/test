@@ -62,4 +62,13 @@ describe('Login e registro de usuários alura pic', () => {
       cy.contains('buttons', 'Register').click();
     });
   });
+
+  it('fazer login do flavio', () => {
+    cy.request({
+      method: 'POST',
+      url: 'https://apialurapic.herokuapp.com/user/login',
+    }).then((res) => {
+      expect(res.status).to.be.equal(200);
+    });
+  });
 });
