@@ -67,8 +67,12 @@ describe('Login e registro de usuários alura pic', () => {
     cy.request({
       method: 'POST',
       url: 'https://apialurapic.herokuapp.com/user/login',
+      body: Cypress.env(),
     }).then((res) => {
       expect(res.status).to.be.equal(200);
+      expect(res.body).is.not.empty;
+      expect(res.body[0]).to.have.property('description');
+      expect(res.body[0].description).to.be.equal('Farol iluminado');
     });
   });
 });
