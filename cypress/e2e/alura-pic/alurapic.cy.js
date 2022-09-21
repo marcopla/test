@@ -71,7 +71,9 @@ describe('Login e registro de usuários alura pic', () => {
     }).then((res) => {
       expect(res.status).to.be.equal(200);
       expect(res.body).is.not.empty;
-      expect(res.body[0]).to.have.property('description');
+      expect(res.body[0]).to.have.property('id');
+      expect(res.body.id).to.be.equal(1);
+      expect(res.body[0]).to.have.property('id');
       expect(res.body[0].description).to.be.equal('Farol iluminado');
     });
   });
