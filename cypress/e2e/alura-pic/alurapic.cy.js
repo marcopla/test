@@ -62,6 +62,7 @@ describe('Login e registro de usuários alura pic', () => {
       cy.contains('buttons', 'Register').click();
     });
   });
+  const usuarios = require('../../fixtures/users.json');
 
   it.only('fazer login do flavio', () => {
     cy.request({
