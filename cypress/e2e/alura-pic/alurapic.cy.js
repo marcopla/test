@@ -53,16 +53,13 @@ describe('Login e registro de usuários alura pic', () => {
     it.only(`registra novo usuário ${usuario.userName}`, () => {
       cy.constains('a', 'Register now').click();
       cy.constains('button', 'Register now').click();
-      cy.get('input[formcontrolname="email"]').type(
-        'jaqueline.oliveira@alura.com.br',
-      );
+      cy.get('input[formcontrolname="email"]').type(usuario.name);
       cy.get('input[formcontrolname="fullName"]').type(usuario.fullname);
       cy.get('input[formcontrolname="userName"]').type(usuario.fullname);
       cy.get('input[formcontrolname="password"]').type(usuario.password);
       cy.contains('buttons', 'Register').click();
     });
   });
-  const usuarios = require('../../fixtures/users.json');
 
   it.only('fazer login do flavio', () => {
     cy.request({
