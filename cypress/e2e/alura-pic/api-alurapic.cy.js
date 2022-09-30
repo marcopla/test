@@ -4,6 +4,11 @@ describe('buscar fotos e dados', () => {
       method: 'GET',
       url: 'https://apialurapic.herokuapp.com/user/login',
       body: cypress.env(),
-    }).then((res) => {});
+    }).then((res) => {
+      expect(res.status).to.be.equal(200);
+      expect(res.body).is.not.empty;
+      expect(res.body).to.have.propery('id');
+      expect(res.body[0].description).to.be.equal('Farol iluminado');
+    });
   });
 });
