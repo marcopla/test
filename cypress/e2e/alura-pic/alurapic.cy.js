@@ -61,7 +61,7 @@ describe('Login e registro de usuários alura pic', () => {
     });
   });
 
-  it.only('fazer login do flavio', () => {
+  it('fazer login do flavio', () => {
     cy.request({
       method: 'POST',
       url: 'https://apialurapic.herokuapp.com/user/login',
@@ -74,5 +74,12 @@ describe('Login e registro de usuários alura pic', () => {
       expect(res.body).to.have.property('email');
       expect(res.body.email).to.be.equal('flavio@alurapic.com.br');
     });
+  });
+
+  /* Novos casos de testes */
+  it('verifica mensagens na tela inicial', () => {
+    cy.contains('ap-vmessage', 'User name is required!').should('be.visible');
+    cy.contains('ap-vmessage', 'Password is required!').should('be.visible');
+    cy.get('button[type="submit"]').should('be.visible');
   });
 });
