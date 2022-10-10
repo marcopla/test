@@ -15,5 +15,6 @@ module.exports = defineConfig({
       json: false,
       timestamp: 'mmddyyyy_HHMMss',
     },
+    baseUrl: 'https://apialurapic.herokuapp.com/user/login',
   },
 });
