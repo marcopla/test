@@ -37,7 +37,7 @@ describe('Login e registro de usuários alura pic', () => {
   });
 
   it('fazer login do usuário válido', () => {
-    cy.login('flavio', '123');
+    cy.login(Cypress.env('userName'), Cypress.env('password'));
     cy.contains('a', '(Logout)').should('be.visible');
   });
 
@@ -64,7 +64,7 @@ describe('Login e registro de usuários alura pic', () => {
   it('fazer login do flavio', () => {
     cy.request({
       method: 'POST',
-      url: 'https://apialurapic.herokuapp.com/user/login',
+      url: '/',
       body: Cypress.env(),
     }).then((res) => {
       expect(res.status).to.be.equal(200);

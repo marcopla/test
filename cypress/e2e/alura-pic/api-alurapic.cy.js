@@ -2,7 +2,7 @@ describe('buscar fotos e dados', () => {
   it('buscar fotos do flávio', () => {
     cy.request({
       method: 'GET',
-      url: 'https://apialurapic.herokuapp.com/flavio/photos',
+      url: '/',
       body: Cypress.env(),
     }).then((res) => {
       expect(res.status).to.be.equal(200);
