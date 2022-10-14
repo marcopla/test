@@ -2,7 +2,7 @@ describe('', () => {
   beforeEach(() => {
     cy.visit();
   });
-  cy.intercept('POST', 'https://alura-fotos.herokuapp.com/user/login', {
+  cy.intercept('POST', 'https://apialurapic.herokuapp.com/user/login', {
     statusCode: 400
 } ).as('stubPost')
   })
