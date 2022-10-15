@@ -2,13 +2,18 @@ describe('', () => {
   beforeEach(() => {
     cy.visit();
   });
-  cy.intercept('POST', 'https://apialurapic.herokuapp.com/user/login', {
-    statusCode: 400
-} ).as('stubPost')
-  })
-  it('', () => {
-    cy.login(Cypress.env('userName'), Cypress.env('password'))
-    cy.wait('@stubPost')
-    cy.contains('a', '(Logout)').should('be.visible');
+
+describe('teste e-gerencial', () => {
+  beforeEach(() => {
+    cy.visit('https://www.alura.com.br');
+  });
+
+  it('teste de login e-gerencial', () => {
+    cy.get('#header-barraBusca-form-campoBusca').type('login');
+    cy.get('.header-barraBusca-form-submit').click();
+    cy.get('h4.busca-resultado-nome').should(
+      'contain',
+      'Login efetuado com sucesso',
+    );
   });
 });
