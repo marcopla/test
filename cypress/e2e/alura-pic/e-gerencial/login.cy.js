@@ -1,8 +1,3 @@
-describe('', () => {
-  beforeEach(() => {
-    cy.visit();
-  });
-
 describe('teste e-gerencial', () => {
   beforeEach(() => {
     cy.visit('https://www.alura.com.br');
