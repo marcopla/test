@@ -18,5 +18,11 @@ describe('teste e-gerencial', () => {
       'contain',
       'Login efetuado com sucesso',
     );
+    cy.request(() => {
+      url: body: {
+        login: `teste`;
+        senha: `teste`;
+      }
+    });
   });
 });
