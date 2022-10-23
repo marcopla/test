@@ -19,7 +19,9 @@ describe('teste e-gerencial', () => {
       'Login efetuado com sucesso',
     );
     cy.request(() => {
-      url: body: {
+      method: `POST`;
+      url: ``;
+      body: {
         login: `teste`;
         senha: `teste`;
       }
