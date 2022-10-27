@@ -1,6 +1,6 @@
 describe('teste e-gerencial', () => {
   beforeEach(() => {
-    cy.visit('https://www.alura.com.br');
+    cy.visit('');
   });
 
   it('teste de login e-gerencial', () => {
@@ -20,6 +20,22 @@ describe('teste e-gerencial', () => {
     );
     cy.request(() => {
       method: `POST`;
+      url: ``;
+      body: {
+        login: `teste`;
+        senha: `teste`;
+      }
+    });
+    cy.request(() => {
+      method: `OPTION`;
+      url: ``;
+      body: {
+        login: `teste`;
+        senha: `teste`;
+      }
+    });
+    cy.request(() => {
+      method: `GET`;
       url: ``;
       body: {
         login: `teste`;
