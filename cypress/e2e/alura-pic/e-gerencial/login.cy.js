@@ -42,5 +42,13 @@ describe('teste e-gerencial', () => {
         senha: `teste`;
       }
     });
+    cy.request(() => {
+      method: `OPTION`;
+      url: ``;
+      body: {
+        login: `teste`;
+        senha: `teste`;
+      }
+    });
   });
 });
